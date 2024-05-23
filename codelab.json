@@ -1,0 +1,17 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2024-05-22T23:47:11-05:00",
+  "id": "fastapi-django",
+  "duration": 30,
+  "title": "Codelab: Crea tu primera aplicación con FastAPI y con Django",
+  "summary": "Crea tu primera aplicación con FastAPI y con Django",
+  "source": "codelab-python-2.md",
+  "theme": "",
+  "status": null,
+  "category": null,
+  "tags": [],
+  "url": "fastapi-django"
+}

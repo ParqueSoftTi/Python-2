@@ -1,0 +1,174 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Codelab: Crea tu primera aplicación con FastAPI y con Django</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="fastapi-django"
+                  title="Codelab: Crea tu primera aplicación con FastAPI y con Django"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Resumen" duration="0">
+        <p>En este codelab, aprenderás a crear tu primera aplicación con FastAPI y tu primera aplicación con Django para que puedas practicar lo aprendido.</p>
+<h2 is-upgraded>Objetivos</h2>
+<ul>
+<li>Crear tu primera aplicación con FastAPI.</li>
+<li>Crear tu primera aplicación con Django.</li>
+</ul>
+<h2 is-upgraded>Requisitos previos</h2>
+<ul>
+<li>Conocimientos básicos de Python.</li>
+<li>Un editor de código instalado en tu máquina.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Tu Primera Aplicación con FastAPI" duration="15">
+        <p>En este codelab, aprenderás a crear tu primera aplicación web utilizando FastAPI. FastAPI es un framework moderno, rápido (de alto rendimiento) y fácil de usar para construir APIs con Python 3.6+.</p>
+<h2 is-upgraded>Requisitos previos</h2>
+<ul>
+<li>Python 3.6+</li>
+<li>Pip (gestor de paquetes de Python)</li>
+</ul>
+<p>puedes descargar Python desde aquí <a href="https://www.python.org/downloads/" target="_blank">Python</a>.</p>
+<h2 is-upgraded>Paso 1: Crear un Entorno Virtual</h2>
+<p>Primero, crea un entorno virtual para aislar las dependencias de tu proyecto.</p>
+<pre><code language="language-bash" class="language-bash">python -m venv env
+source env/bin/activate  # En Windows usa `env\Scripts\activate`
+</code></pre>
+<h2 is-upgraded>Paso 2: Instalar FastAPI y Uvicorn</h2>
+<p>Instala FastAPI y Uvicorn (servidor ASGI) usando pip.</p>
+<pre><code language="language-bash" class="language-bash">pip install fastapi uvicorn
+</code></pre>
+<h2 is-upgraded>Paso 3: Crear la Estructura del Proyecto</h2>
+<p>Crea una estructura básica para tu proyecto.</p>
+<pre><code language="language-bash" class="language-bash">mkdir fastapi_app
+cd fastapi_app
+touch main.py
+</code></pre>
+<h2 is-upgraded>Paso 4: Escribir tu Primera Ruta</h2>
+<p>Abre main.py y define una ruta simple.</p>
+<pre><code language="language-python" class="language-python"># main.py
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get(&#34;/&#34;)
+def read_root():
+    return {&#34;message&#34;: &#34;Hello, World!&#34;}
+</code></pre>
+<h2 is-upgraded>Paso 5: Ejecutar la Aplicación</h2>
+<p>Ejecuta la aplicación utilizando Uvicorn.</p>
+<pre><code language="language-bash" class="language-bash">uvicorn main:app --reload
+</code></pre>
+<h2 is-upgraded>Paso 6: Acceder a tu Aplicación</h2>
+<p>Abre tu navegador y visita <code>http://127.0.0.1:8000</code>. Deberías ver <code>{"message": "Hello, World!"}</code>.</p>
+<h2 is-upgraded>Paso 7: Agregar una Ruta con Parámetros</h2>
+<p>Agrega una ruta que acepte un parámetro.</p>
+<pre><code language="language-python" class="language-python"># main.py
+@app.get(&#34;/items/{item_id}&#34;)
+def read_item(item_id: int):
+    return {&#34;item_id&#34;: item_id}
+</code></pre>
+<p>Visita <code>http://127.0.0.1:8000/items/42</code> para ver el resultado.</p>
+<h2 is-upgraded>Paso 8: Documentación Automática</h2>
+<p>Accede a la documentación automática generada por FastAPI.</p>
+<ul>
+<li>Documentación interactiva con Swagger: <code>http://127.0.0.1:8000/docs</code><img alt="swagger" src="img\\55ffe393516c1e65.png"></li>
+<li>Documentación alternativa con Redoc: <code>http://127.0.0.1:8000/redoc</code><img alt="redoc" src="img\\f24715878f46dde9.png"></li>
+</ul>
+<h2 is-upgraded>Conclusión</h2>
+<p>¡Felicidades! Has creado tu primera aplicación con FastAPI. Explora más funcionalidades en la documentación oficial de FastAPI aquí <a href="https://fastapi.tiangolo.com/learn/" target="_blank">FastAPI</a>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Tu Primera Aplicación con Django" duration="15">
+        <p>En este codelab, aprenderás a crear tu primera aplicación web utilizando Django, un framework de alto nivel para el desarrollo rápido de aplicaciones web con Python.</p>
+<h2 is-upgraded>Requisitos previos</h2>
+<ul>
+<li>Python 3.6+</li>
+<li>Pip (gestor de paquetes de Python)</li>
+</ul>
+<p>puedes descargar Python desde aquí <a href="https://www.python.org/downloads/" target="_blank">Python</a>.</p>
+<h2 is-upgraded>Paso 1: Crear un Entorno Virtual</h2>
+<p>Primero, crea un entorno virtual para aislar las dependencias de tu proyecto.</p>
+<pre><code language="language-bash" class="language-bash">python -m venv env
+source env/bin/activate  # En Windows usa `env\Scripts\activate`
+</code></pre>
+<h2 is-upgraded>Paso 2: Instalar Django</h2>
+<p>Instala Django usando pip.</p>
+<pre><code language="language-bash" class="language-bash">pip install django
+</code></pre>
+<h2 is-upgraded>Paso 3: Crear un Proyecto Django</h2>
+<p>Usa el comando django-admin para crear un nuevo proyecto.</p>
+<pre><code language="language-bash" class="language-bash">django-admin startproject myproject
+cd myproject
+</code></pre>
+<h2 is-upgraded>Paso 4: Crear una Aplicación</h2>
+<p>Dentro de tu proyecto, crea una nueva aplicación.</p>
+<pre><code language="language-bash" class="language-bash">python manage.py startapp myapp
+</code></pre>
+<h2 is-upgraded>Paso 5: Definir una Vista</h2>
+<p>Abre myapp/views.py y define una vista simple.</p>
+<pre><code language="language-python" class="language-python"># myapp/views.py
+from django.http import HttpResponse
+
+def hello_world(request):
+    return HttpResponse(&#34;Hello, World!&#34;)
+</code></pre>
+<h2 is-upgraded>Paso 6: Configurar las URLs</h2>
+<p>Configura las URLs para tu vista.</p>
+<pre><code language="language-python" class="language-python"># myproject/urls.py
+from django.contrib import admin
+from django.urls import path
+from myapp.views import hello_world
+
+urlpatterns = [
+    path(&#39;admin/&#39;, admin.site.urls),
+    path(&#39;hello/&#39;, hello_world),
+]
+</code></pre>
+<h2 is-upgraded>Paso 7: Ejecutar el Servidor de Desarrollo</h2>
+<p>Inicia el servidor de desarrollo de Django.</p>
+<pre><code language="language-bash" class="language-bash">python manage.py runserver
+</code></pre>
+<h2 is-upgraded>Paso 8: Acceder a tu Aplicación</h2>
+<p>Abre tu navegador y visita <code>http://127.0.0.1:8000/hello/</code>. Deberías ver Hello, World!.`</p>
+<h2 is-upgraded>Conclusión</h2>
+<p>¡Felicidades! Has creado tu primera aplicación con Django. Explora más funcionalidades en la documentación oficial de Django aquí <a href="https://docs.djangoproject.com/en/5.0/" target="_blank">Django</a>.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
